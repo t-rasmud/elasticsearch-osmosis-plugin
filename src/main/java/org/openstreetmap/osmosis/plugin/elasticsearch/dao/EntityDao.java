@@ -134,6 +134,7 @@ public class EntityDao {
 		return iterator;
 	}
 
+	@SuppressWarnings("iteration:method.invocation")	// next called in loop: loop index always less than Iterator size
 	protected ESShape getShape(Iterator<MultiGetItemResponse> iterator, int size) {
 		ESShapeBuilder shapeBuilder = new ESShapeBuilder(size);
 		for (int i = 0; i < size; i++) {
